@@ -2,8 +2,7 @@
 
 my sample project for testing node
 ## start command
-
-	```
-	node run start
-	```
-	testing edit
+```
+node run start
+```
+testing edit

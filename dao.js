@@ -30,6 +30,7 @@ class Databaseclass {
                 try {
                     if (res.rowCount) {
                         resolve(res);
+                        console.log(res);
                     }
                     else if (err) {
                         reject(err);
