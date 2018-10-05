@@ -1,0 +1,120 @@
+<!--
+@author [Abhishek m s]
+@email [abhishekmsams54@gmail.com]
+@create date 2018-09-13 12:30:14
+@modify date 2018-09-13 12:30:14
+@desc [description]
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>registration page</title>
+    <link rel="stylesheet" href="css/stylereg.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/indexreg.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form class="link">
+                <input type="button" class="rebtn" id="redirect" value="already a user sign in here">
+        </form>
+        <div class="container">
+            <h1>Registration form</h1>
+            <form class="form">
+                <table>
+                    <tr>
+                        <td class="lft">Name</td>
+                        <td>
+                            <input type="text" id="name" placeholder="Name" autocomplete="off">
+                        </td>
+                        <td >
+                            <span class="nameSpan" style="color: red; visibility: hidden;">enter a valid name</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lft">User Name</td>
+                        <td>
+                            <input type="text" id="uname" placeholder="Username" autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="unameSpan" style="color: red; visibility: hidden;">uname alredy exist</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lft">Address</td>
+                        <td>
+                            <input type="text" id="address" placeholder="Address" autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="addressSpan" style="color: red; visibility: hidden;">enter address</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lft">Email</td>
+                        <td>
+                            <input type="email" id="email" placeholder="Email" autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="emailSpan" style="color: red; visibility: hidden;">invalid email</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lft">Password</td>
+                        <td>
+                            <input type="password" id="password" placeholder="Password" autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="passwordSpan" style="color: red; visibility: hidden;">password must be 8
+                                charactors</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lft">Confirm Password</td>
+                        <td>
+                            <input type="password" id="cpassword" placeholder="Confirm Password" autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="cpasswordSpan" style="color: red; visibility: hidden;">password missmatch</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lft">Phone</td>
+                        <td>
+                            <input type="number" id="phone" placeholder="Phone" autocomplete="off">
+                        </td>
+                        <td>
+                            <span class="phoneSpan" style="color: red; visibility: hidden;">invalid phone</span>
+                        </td>
+                    </tr>
+                    <td></td>
+                    <td>
+                        <input type="button" class="btn" id="reg-button" value="register">
+                    </td>
+                    <td>
+                        <span class="btnSpan" style="color: red; visibility: hidden;">fill all fields</span>
+                    </td>
+                </table>
+            </form>
+        </div>
+
+        <!--code for css animation -->
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+</body>
+
+</html>
