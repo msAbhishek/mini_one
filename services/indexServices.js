@@ -29,14 +29,10 @@ class IndexServices extends database {
                     self.dbOperations(registerQuery_insert, params).then(() => {
                         let registerQuery_select = 'SELECT * FROM employee WHERE uname =$1';
                         let params = userObj.body.uname;
-                        self.dbOperations(registerQuery_select, [params]).then((res) => {
-                            resolve(stat);
-                            fs.createReadStream('./public/testimg/avatarmen.jpg').pipe(fs.createWriteStream('./public/testimg/user_Image/' + res.rows[0].id + '.jpg'));
-                        }).catch((err) => {
-                            let message = ' error in indexservice file on register function on select query';
-                            let timeStamp = new Date();
-                            myEmitter.emit('error', message, timeStamp, err);
-                        });
+                        return self.dbOperations(registerQuery_select, [params]);
+                    }).then((res) => {
+                        resolve(stat);
+                        fs.createReadStream('./public/testimg/avatarmen.jpg').pipe(fs.createWriteStream('./public/testimg/user_Image/' + res.rows[0].id + '.jpg'));
                     }).catch((err) => {
                         if (err) {
                             let message = ' error in indexservice file on register function';
