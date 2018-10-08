@@ -26,19 +26,17 @@ class IndexServices extends database {
                 bcrypt.hash(password, salt, (err, hash) => {
                     params[4] = hash;
                     let registerQuery_insert = 'INSERT INTO employee(name,uname,address,email,password,phone,usertype) values($1,$2,$3,$4,$5,$6,$7)';
-                    self.dbOperations(registerQuery_insert, params).then((res) => {
-                        if (res) {
-                            let registerQuery_select = 'SELECT * FROM employee WHERE uname =$1';
-                            let params = userObj.body.uname;
-                            self.dbOperations(registerQuery_select, [params]).then((res) => {
-                                resolve(stat);
-                                fs.createReadStream('./public/testimg/avatarmen.jpg').pipe(fs.createWriteStream('./public/testimg/user_Image/' + res.rows[0].id + '.jpg'));
-                            }).catch((err) => {
-                                let message = ' error in indexservice file on register function on select query';
-                                let timeStamp = new Date();
-                                myEmitter.emit('error', message, timeStamp, err);
-                            });
-                        }
+                    self.dbOperations(registerQuery_insert, params).then(() => {
+                        let registerQuery_select = 'SELECT * FROM employee WHERE uname =$1';
+                        let params = userObj.body.uname;
+                        self.dbOperations(registerQuery_select, [params]).then((res) => {
+                            resolve(stat);
+                            fs.createReadStream('./public/testimg/avatarmen.jpg').pipe(fs.createWriteStream('./public/testimg/user_Image/' + res.rows[0].id + '.jpg'));
+                        }).catch((err) => {
+                            let message = ' error in indexservice file on register function on select query';
+                            let timeStamp = new Date();
+                            myEmitter.emit('error', message, timeStamp, err);
+                        });
                     }).catch((err) => {
                         if (err) {
                             let message = ' error in indexservice file on register function';
@@ -60,32 +58,28 @@ class IndexServices extends database {
         return new Promise((resolve, reject) => {
             let loginQuery_select = 'SELECT * FROM employee WHERE uname =$1';
             let Params = uname;
+            let resultFalseObj = {
+                'stat': false
+            };
             this.dbOperations(loginQuery_select, [Params]).then((res) => {
-                if (res.rows.length > 0) {
-                    bcrypt.compare(password, res.rows[0].password, (err, responseObj) => {
-                        if (responseObj) {
-                            let resultObj = {
-                                'id': res.rows[0].id,
-                                'type': res.rows[0].usertype,
-                                'stat': true,
-                                'name': res.rows[0].uname
-                            };
-                            resolve(resultObj);
-                        }
-                        else {
-                            let resultObj = {
-                                'stat': false
-                            };
-                            reject(resultObj);
-                        }
-                    });
+                if (res.rows.length <= 0) {
+                    reject(resultFalseObj);
+                    return;
                 }
-                else {
-                    let resultObj = {
-                        'stat': false
+                bcrypt.compare(password, res.rows[0].password, (err, responseObj) => {
+                    if (!responseObj) {
+                        reject(resultFalseObj);
+                        return;
+                    }
+                    let resultTrueObj = {
+                        'id': res.rows[0].id,
+                        'type': res.rows[0].usertype,
+                        'stat': true,
+                        'name': res.rows[0].uname
                     };
-                    reject(resultObj);
-                }
+                    resolve(resultTrueObj);
+                });
+
             }).catch((err) => {
                 if (err) {
                     let message = 'error in indexservice file on login function';
@@ -107,13 +101,12 @@ class IndexServices extends database {
             };
             let checkUserNameQuery_select = 'SELECT count(*) FROM employee WHERE uname = $1';
             this.dbOperations(checkUserNameQuery_select, [uname]).then((res) => {
-                if (res.rows[0].count > 0) {
-                    resultObj.stat = true;
-                    resolve(resultObj);
-                }
-                else {
+                if (res.rows[0].count <= 0) {
                     reject(resultObj);
+                    return;
                 }
+                resultObj.stat = true;
+                resolve(resultObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in indexservice file on checkusername function';

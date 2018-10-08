@@ -18,17 +18,16 @@ class AdminHomeServices extends database {
             let listAllQuery_select = 'SELECT * FROM employee WHERE usertype = $1 ORDER BY name';
             let params = ['user'];
             this.dbOperations(listAllQuery_select, params).then((res) => {
-                if (res.rows.length > 0) {
-                    let resultObj = {
-                        'count': res.rows.length,
-                        'user': res.rows,
-                        'stat': true
-                    };
-                    resolve(resultObj);
-                }
-                else {
+                if (res.rows.length <= 0) {
                     reject(stat);
+                    return;
                 }
+                let resultObj = {
+                    'count': res.rows.length,
+                    'user': res.rows,
+                    'stat': true
+                };
+                resolve(resultObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminhomeserivces file on listall function';
@@ -49,16 +48,15 @@ class AdminHomeServices extends database {
             let listSingleQuery_select = 'SELECT * FROM employee WHERE id = $1';
             let params = [id];
             this.dbOperations(listSingleQuery_select, params).then((res) => {
-                if (res.rows.length > 0) {
-                    var resultObj = {
-                        'user': res.rows[0],
-                        'stat': true
-                    };
-                    resolve(resultObj);
-                }
-                else {
+                if (res.rows.length <= 0) {
                     reject(stat);
+                    return;
                 }
+                let resultObj = {
+                    'user': res.rows[0],
+                    'stat': true
+                };
+                resolve(resultObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminhomeserivces file on listsingle function';
@@ -79,12 +77,11 @@ class AdminHomeServices extends database {
             let makeAdminQuery_update = 'UPDATE employee SET  usertype = $1 WHERE uname =$2';
             let params = ['admin', uname];
             this.dbOperations(makeAdminQuery_update, params).then((res) => {
-                if (res.rowCount > 0) {
-                    resolve(res);
-                }
-                else {
+                if (res.rowCount <= 0) {
                     reject(stat);
+                    return;
                 }
+                resolve(res);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminhomeserivces file on makeadmin function';
@@ -105,12 +102,11 @@ class AdminHomeServices extends database {
             let deleteUserQuery_delete = 'DELETE FROM employee WHERE uname =$1';
             let params = [uname];
             this.dbOperations(deleteUserQuery_delete, params).then((res) => {
-                if (res.rowCount > 0) {
-                    resolve(res);
-                }
-                else {
+                if (res.rowCount <= 0) {
                     reject(stat);
+                    return;
                 }
+                resolve(res);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminhomeserivces file on deleteuser function';

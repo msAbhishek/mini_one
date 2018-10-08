@@ -19,17 +19,16 @@ class AdminViewServices extends database {
             let listAllQuery_select = 'SELECT * FROM employee WHERE usertype = $1 AND id != $2 ORDER BY name';
             let params = ['admin', id];
             this.dbOperations(listAllQuery_select, params).then((res) => {
-                if (res.rows.length > 0) {
-                    let resultObj = {
-                        'count': res.rows.length,
-                        'user': res.rows,
-                        'stat': true
-                    };
-                    resolve(resultObj);
-                }
-                else {
+                if (res.rows.length <= 0) {
                     reject(stat);
+                    return;
                 }
+                let resultObj = {
+                    'count': res.rows.length,
+                    'user': res.rows,
+                    'stat': true
+                };
+                resolve(resultObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminviewserivces file on listall function';
@@ -50,16 +49,15 @@ class AdminViewServices extends database {
             let listsingleQuery_select = 'SELECT * FROM employee WHERE id = $1';
             let params = [id];
             this.dbOperations(listsingleQuery_select, params).then((res) => {
-                if (res.rows.length > 0) {
-                    let resultObj = {
-                        'user': res.rows[0],
-                        'stat': true
-                    };
-                    resolve(resultObj);
-                }
-                else {
+                if (res.rows.length <= 0) {
                     reject(stat);
+                    return;
                 }
+                let resultObj = {
+                    'user': res.rows[0],
+                    'stat': true
+                };
+                resolve(resultObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminviewserivces file on listsingle function';

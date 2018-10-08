@@ -35,12 +35,10 @@ var regServe = new indexServices();
 // code for new user regisration
 app.post('/reg', (req, response) => {
     regServe.register(req).then((registerObj) => {
-        if (registerObj) {
-            response.send(registerObj);
-            let message = 'new user is registered as'+req.body.uname;
-            let timeStamp = new Date();
-            myEmitter.emit('info', message, timeStamp);
-        }
+        response.send(registerObj);
+        let message = 'new user is registered as' + req.body.uname;
+        let timeStamp = new Date();
+        myEmitter.emit('info', message, timeStamp);
     }).catch((errorObj) => { // eslint-disable-line
         response.send(false);
     });
@@ -49,15 +47,14 @@ app.post('/reg', (req, response) => {
 // code for user login check
 app.post('/log', (req, response) => {
     regServe.login(req.body.uname, req.body.password).then((loginObj) => {
-        if (loginObj.stat) {
-            response.send(loginObj);
-            let message = ' user logined as = '+req.body.uname;
-            let timeStamp = new Date();
-            myEmitter.emit('info', message, timeStamp);
-        }
-        else {
+        if (!loginObj.stat) {
             response.send(false);
+            return;
         }
+        response.send(loginObj);
+        let message = ' user logined as = ' + req.body.uname;
+        let timeStamp = new Date();
+        myEmitter.emit('info', message, timeStamp);
     }).catch((errorObj) => {// eslint-disable-line
         response.send(false);
     });

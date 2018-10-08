@@ -20,16 +20,15 @@ class AdminSearchServices extends database {
             let listQuery_select = 'SELECT * FROM employee WHERE uname LIKE $1 AND id != $2 ORDER BY name';
             let params = [uname, id];
             this.dbOperations(listQuery_select, params).then((res) => {
-                if (res.rows.length > 0) {
-                    let searchObj = {
-                        'user': res.rows,
-                        'stat': true
-                    };
-                    resolve(searchObj);
-                }
-                else {
+                if (res.rows.length <= 0) {
                     reject(stat);
+                    return;
                 }
+                let searchObj = {
+                    'user': res.rows,
+                    'stat': true
+                };
+                resolve(searchObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in adminsearchserivces file on list function';

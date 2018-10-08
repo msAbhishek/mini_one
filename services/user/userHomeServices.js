@@ -17,32 +17,30 @@ class UserHomeServices extends database {
         return new Promise((resolve, reject) => {
             let getDetailsQuery_select = 'SELECT * FROM employee WHERE id = $1';
             let params = id;
+            let resultFalseObj = { 'id': 'null', 'stat': false };
             this.dbOperations(getDetailsQuery_select, [params]).then((res) => {
-                if (res.rows.length > 0) {
-                    let resultObj = {
-                        'id': res.rows[0].id,
-                        'name': res.rows[0].name,
-                        'uname': res.rows[0].uname,
-                        'address': res.rows[0].address,
-                        'email': res.rows[0].email,
-                        'phone': res.rows[0].phone,
-                        'password': res.rows[0].password,
-                        'stat': true,
-                    };
-                    resolve(resultObj);
+                if (res.rows.length <= 0) {
+                    reject(resultFalseObj);
+                    return;
                 }
-                else {
-                    let resultObj = { 'id': 'null', 'stat': false };
-                    reject(resultObj);
-                }
+                let resultObj = {
+                    'id': res.rows[0].id,
+                    'name': res.rows[0].name,
+                    'uname': res.rows[0].uname,
+                    'address': res.rows[0].address,
+                    'email': res.rows[0].email,
+                    'phone': res.rows[0].phone,
+                    'password': res.rows[0].password,
+                    'stat': true,
+                };
+                resolve(resultObj);
             }).catch((err) => {
                 if (err) {
                     let message = ' error in userhomeservices file on getdetails function';
                     let timeStamp = new Date();
                     myEmitter.emit('error', message, timeStamp, err);
                 }
-                let resultObj = { 'id': 'null', 'stat': false };
-                reject(resultObj);
+                reject(resultFalseObj);
             });
         });
     }
