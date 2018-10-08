@@ -4,7 +4,7 @@
   "description": "my second project",
   "main": "index.js",
   "scripts": {
-    "test": "main",
+    "test": "mocha",
     "start": "node index"
   },
   "author": "Abhishek",
