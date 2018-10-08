@@ -5,10 +5,10 @@
  * @modify date 2018-09-20 15:15:26
  * @desc [description]
 */
-const database = require('../../dao');
+const database = require('../../../dao');
 const Promise = require('promise');
 const bcrypt = require('bcryptjs');
-const myEmitter = require('../../eventEmitter');
+const myEmitter = require('../../../eventEmitter');
 class UserEditServices extends database {
     /**
      * updateall function for updating all user details

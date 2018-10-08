@@ -9,7 +9,7 @@ const express = require('express');
 const userHomeRouter = express.Router();
 const userhomeservices = require('../../services/user/userHomeServices');
 const fs = require('fs');
-const myEmitter = require('../../eventEmitter');
+const myEmitter = require('../../../eventEmitter');
 
 // code for creating service classes
 const userhome = new userhomeservices();

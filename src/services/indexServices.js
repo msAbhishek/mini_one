@@ -5,11 +5,11 @@
  * @modify date 2018-10-03 09:47:20
  * @desc [description]
 */
-const database = require('../dao');
+const database = require('../../dao');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const Promise = require('promise');
-const myEmitter = require('../eventEmitter');
+const myEmitter = require('../../eventEmitter');
 class IndexServices extends database {
     /**
      * register function for registering new user

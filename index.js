@@ -10,12 +10,12 @@ const express = require('express');
 const app = express();
 const logger = require('./loggerWinston');
 const myEmitter = require('./eventEmitter');
-const userHomeRouter = require('./routers/user/userHome');
-const userEditRouter = require('./routers/user/userEdit');
-const adminHomeRouter = require('./routers/admin/adminHome');
-const adminViewRouter = require('./routers/admin/adminView');
-const adminSearchRouter = require('./routers/admin/adminSearch');
-const indexServices = require('./services/indexServices');
+const userHomeRouter = require('./src/routers/user/userHome');
+const userEditRouter = require('./src/routers/user/userEdit');
+const adminHomeRouter = require('./src/routers/admin/adminHome');
+const adminViewRouter = require('./src/routers/admin/adminView');
+const adminSearchRouter = require('./src/routers/admin/adminSearch');
+const indexServices = require('./src/services/indexServices');
 app.use(express.static('public'));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({

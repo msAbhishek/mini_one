@@ -8,7 +8,7 @@
 const express = require('express');
 const userEditRouter = express.Router();
 const usereditServices = require('../../services/user/userEditServices');
-const myEmitter = require('../../eventEmitter');
+const myEmitter = require('../../../eventEmitter');
 
 // code for creating service class
 const userEdit = new usereditServices();

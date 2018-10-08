@@ -5,9 +5,9 @@
  * @modify date 2018-09-20 15:15:19
  * @desc [description]
 */
-const database = require('../../dao');
+const database = require('../../../dao');
 const Promise = require('promise');
-const myEmitter = require('../../eventEmitter');
+const myEmitter = require('../../../eventEmitter');
 class UserHomeServices extends database {
     /**
      * getdetails function for listing user in user home page

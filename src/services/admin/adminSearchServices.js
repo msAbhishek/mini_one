@@ -5,9 +5,9 @@
  * @modify date 2018-09-20 15:15:47
  * @desc [description]
 */
-const database = require('../../dao');
+const database = require('../../../dao');
 const Promise = require('promise');
-const myEmitter = require('../../eventEmitter');
+const myEmitter = require('../../../eventEmitter');
 class AdminSearchServices extends database {
     /**
      * list function for searching
