@@ -3,6 +3,9 @@
 my sample project for testing node
 ## start command
 ```
-node run start
+npm run start
 ```
-testing edit
+## test command
+```
+npm run test
+```
