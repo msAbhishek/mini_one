@@ -5,4 +5,7 @@ my sample project for testing node
 ```
 node run start
 ```
-testing edit
+## test command
+```
+node run test
+```
