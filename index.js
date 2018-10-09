@@ -16,14 +16,20 @@ const adminHomeRouter = require('./src/routers/admin/adminHome');
 const adminViewRouter = require('./src/routers/admin/adminView');
 const adminSearchRouter = require('./src/routers/admin/adminSearch');
 const indexServices = require('./src/services/indexServices');
+const { spawn } = require('child_process');
 const { fork } = require('child_process');
-fork('./email.js');
 app.use(express.static('public'));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+fork('./email.js');
+let myBatFilePath = 'D:\\mini_one\\myTestBatfile.bat';
+const bat = spawn('cmd.exe',['/c',myBatFilePath]);
+bat.stdout.on('data', (data) => {
+    console.log(unescape(data));
+});
 //code for routing
 app.use('/userhome', userHomeRouter);
 app.use('/useredit', userEditRouter);
