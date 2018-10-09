@@ -16,6 +16,8 @@ const adminHomeRouter = require('./src/routers/admin/adminHome');
 const adminViewRouter = require('./src/routers/admin/adminView');
 const adminSearchRouter = require('./src/routers/admin/adminSearch');
 const indexServices = require('./src/services/indexServices');
+const { fork } = require('child_process');
+fork('./email.js');
 app.use(express.static('public'));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
