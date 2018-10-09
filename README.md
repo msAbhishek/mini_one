@@ -3,9 +3,9 @@
 my sample project for testing node
 ## start command
 ```
-node run start
+npm run start
 ```
 ## test command
 ```
-node run test
+npm run test
 ```
