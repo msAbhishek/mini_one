@@ -1,3 +1,10 @@
+/**
+ * @author [Abhishek m s]
+ * @email [abhishekmsams54@gmail.com]
+ * @create date 2018-10-10 08:57:20
+ * @modify date 2018-10-10 08:57:20
+ * @desc [description]
+*/
 
 const database = require('../../dao');
 const Promise = require('promise');

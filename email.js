@@ -1,3 +1,10 @@
+/**
+ * @author [Abhishek m s]
+ * @email [abhishekmsams54@gmail.com]
+ * @create date 2018-10-10 08:55:50
+ * @modify date 2018-10-10 08:55:50
+ * @desc [description]
+*/
 const nodemailer = require('nodemailer');
 const mailService = require('./src/services/mailServices');
 const mail = new mailService();

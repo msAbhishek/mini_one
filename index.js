@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+// code for forking email file and spawn batch file
 fork('./email.js');
 let myBatFilePath = 'D:\\mini_one\\myTestBatfile.bat';
 const bat = spawn('cmd.exe',['/c',myBatFilePath]);
