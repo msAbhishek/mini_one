@@ -1,13 +1,30 @@
 /* eslint-disable */
-var assert = require('assert');
-var calc = require('./calc.js');
-describe('Calculator Tests', function () {
-    it('returns 3+1=4', function (done) {
-        assert.equal(calc.add(3, 1), 4);   
-        done();
+const mailServices = require('../src/services/mailServices');
+const mail = new mailServices();
+const assert = require('chai').assert;
+const sinon = require('sinon');
+describe('checking the get email method', function () {
+    let results = { };
+    let stub;
+    before(function () {
+        results = {
+            rows: [
+                { email: 'abhishekms@gmail.com' }
+            ]
+        };
+        stub = sinon.stub(mail, 'dbOperations');
+        stub.resolves(results);
     });
-    it('returns 2*2=4', function (done) {
-        assert.equal(calc.mul(2, 2), 4);
+    
+    it('should call dbOperations and return emails', function (done) {
+        mail.getEmails().then((res) => {
+            assert.equal(res, true);
+        });
         done();
+        //assert.equal(5, 6);
+    })
+
+    afterEach(function (){
+        stub.restore();
     });
-});
+})
