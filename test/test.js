@@ -6,7 +6,7 @@ const sinon = require('sinon');
 describe('checking the get email method', function () {
     let results = { };
     let stub;
-    before(function () {
+    beforeEach(function () {
         results = {
             rows: [
                 { email: 'abhishekms@gmail.com' }
@@ -15,15 +15,18 @@ describe('checking the get email method', function () {
         stub = sinon.stub(mail, 'dbOperations');
         stub.resolves(results);
     });
-    
-    it('should call dbOperations and return emails', function (done) {
-        mail.getEmails().then((res) => {
-            assert.equal(res, true);
+    it('should return emails',()=> {
+        return mail.getEmails().then((res) => {
+            assert.equal(res, results);
+        }).catch((err) => {
+            assert.equal(err, false);
         });
-        done();
-        //assert.equal(5, 6);
-    })
-
+    });
+    it('should call dbOperations',()=> {
+        return mail.getEmails().then((res) => {
+            assert(stub.calledOnce);
+        });
+    });
     afterEach(function (){
         stub.restore();
     });
