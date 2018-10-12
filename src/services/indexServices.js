@@ -54,17 +54,14 @@ class IndexServices extends database {
         return new Promise((resolve, reject) => {
             let loginQuery_select = 'SELECT * FROM employee WHERE uname =$1';
             let Params = uname;
-            let resultFalseObj = {
-                'stat': false
-            };
             this.dbOperations(loginQuery_select, [Params]).then((res) => {
                 if (res.rows.length <= 0) {
-                    reject(resultFalseObj);
+                    reject(false);
                     return;
                 }
                 bcrypt.compare(password, res.rows[0].password, (err, responseObj) => {
                     if (!responseObj) {
-                        reject(resultFalseObj);
+                        reject(false);
                         return;
                     }
                     let resultTrueObj = {

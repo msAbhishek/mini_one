@@ -18,6 +18,9 @@ const transporter = nodemailer.createTransport({
         pass: 'Ams11@96.am'
     }
 });
+/**
+ * setting time out to send email
+ */
 setInterval(() => {
     mail.getEmails().then((res) => {
         for(let i=0; i< res.rows.length; i++){
