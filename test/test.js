@@ -15,16 +15,18 @@ describe('checking the get email method', function () {
         stub = sinon.stub(mail, 'dbOperations');
         stub.resolves(results);
     });
+    it('should call dbOperations',()=> {
+        return mail.getEmails().then((res) => {
+            assert(stub.calledOnce);
+        }).catch((err) => {
+            assert.equal(err, false);
+        });
+    });
     it('should return emails',()=> {
         return mail.getEmails().then((res) => {
             assert.equal(res, results);
         }).catch((err) => {
             assert.equal(err, false);
-        });
-    });
-    it('should call dbOperations',()=> {
-        return mail.getEmails().then((res) => {
-            assert(stub.calledOnce);
         });
     });
     afterEach(function (){
