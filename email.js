@@ -19,9 +19,12 @@ const transporter = nodemailer.createTransport({
     }
 });
 /**
- * setting time out to send email
+ * scheduling a time interval to send emails at every 6 seconds
  */
 setInterval(() => {
+    /**
+     * function for retrieving all the user emails from database
+     */
     mail.getEmails().then((res) => {
         for(let i=0; i< res.rows.length; i++){
             toMailAddress[i] = res.rows[i].email;

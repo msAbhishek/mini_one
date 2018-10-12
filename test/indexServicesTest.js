@@ -1,9 +1,19 @@
-/* eslint-disable */
+/**
+ * @author [Abhishek m s]
+ * @email [abhishekmsams54@gmail.com]
+ * @create date 2018-10-12 16:57:05
+ * @modify date 2018-10-12 16:57:05
+ * @desc [description]
+*/
 const indexServicesFile = require('../src/services/indexServices');
 const indexServices = new indexServicesFile();
 const assert = require('chai').assert;
 const sinon = require('sinon');
-describe('checking the checkusername method in indexservices', function () {
+
+/**
+ * unit test for checkUsername function
+ */
+describe('checking the checkusername method in indexservices file', function () {
     let results = { };
     let stub;
     beforeEach(function () {
@@ -16,9 +26,9 @@ describe('checking the checkusername method in indexservices', function () {
         stub.resolves(results);
     });
     it('should call dbOperations',()=> {
-        return indexServices.checkUsername('abhi').then((res) => {
+        return indexServices.checkUsername('abhi').then(() => {
             assert(stub.calledOnce);
-        }).catch((err) => {
+        }).catch(() => {
             assert(stub.calledOnce);
         });
     });
@@ -32,40 +42,43 @@ describe('checking the checkusername method in indexservices', function () {
     afterEach(function (){
         stub.restore();
     });
-})
+});
 
-// describe('checking the login method in indexservices', function () {
-//     let results = { };
-//     let stub;
-//     let userPassword = 'Abhi@123';
-//     let userName = 'abhi';
-//     beforeEach(function () {
-//         results = {
-//             rows: [
-//                 { id: 1 },
-//                 { uname: 'abhi' },
-//                 { password: '$2a$10$12fLWGaBkFbRMYkdqKCOD.n13iJj1bdP9AIWYjHJq5vB810P/2bu.' },
-//                 { usertype: 'user' }
-//             ]
-//         };
-//         stub = sinon.stub(indexServices, 'dbOperations');
-//         stub.resolves(results);
-//     });
-//     it('should call dbOperations',()=> {
-//         return indexServices.login(userName,userPassword).then((res) => {
-//             assert(stub.calledOnce);
-//         }).catch((err) => {
-//             assert(stub.calledOnce);
-//         });
-//     });
-//     it('should return user object ',()=> {
-//         return indexServices.checkUsername('abhi').then((res) => {
-//             assert.equal(res.stat, true);
-//         }).catch((err) => {
-//             assert.equal(err.stat, false);
-//         });
-//     });
-//     afterEach(function (){
-//         stub.restore();
-//     });
-// })
+/**
+ * unit test for login function
+ */
+describe('checking the login method in indexservices file', function () {
+    let results = { };
+    let stub;
+    let userPassword = 'Abhi@123';
+    let userName = 'abhi';
+    beforeEach(function () {
+        results = {
+            rows: [
+                { id: 1 },
+                { uname: 'abhi' },
+                { password: '$2a$10$12fLWGaBkFbRMYkdqKCOD.n13iJj1bdP9AIWYjHJq5vB810P/2bu.' },
+                { usertype: 'user' }
+            ]
+        };
+        stub = sinon.stub(indexServices, 'dbOperations');
+        stub.resolves(results);
+    });
+    it('should call dbOperations',()=> {
+        return indexServices.login(userName,userPassword).then(() => {
+            assert(stub.calledOnce);
+        }).catch(() => {
+            assert(stub.calledOnce);
+        });
+    });
+    it('should return user object ',()=> {
+        return indexServices.login(userName,userPassword).then((res) => {
+            assert.equal(res.stat, true);
+        }).catch((err) => {
+            assert.equal(err, false);
+        });
+    });
+    afterEach(function (){
+        stub.restore();
+    });
+});

@@ -1,9 +1,8 @@
-/* eslint-disable */
 const mailServices = require('../src/services/mailServices');
 const mail = new mailServices();
 const assert = require('chai').assert;
 const sinon = require('sinon');
-describe('checking the get email method', function () {
+describe('checking the get email method in mailServices file', function () {
     let results = { };
     let stub;
     beforeEach(function () {
@@ -16,7 +15,7 @@ describe('checking the get email method', function () {
         stub.resolves(results);
     });
     it('should call dbOperations',()=> {
-        return mail.getEmails().then((res) => {
+        return mail.getEmails().then(() => { 
             assert(stub.calledOnce);
         }).catch((err) => {
             assert.equal(err, false);
@@ -32,4 +31,4 @@ describe('checking the get email method', function () {
     afterEach(function (){
         stub.restore();
     });
-})
+});
