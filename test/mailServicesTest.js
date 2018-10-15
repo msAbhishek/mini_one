@@ -2,7 +2,7 @@ const mailServices = require('../src/services/mailServices');
 const mail = new mailServices();
 const assert = require('chai').assert;
 const sinon = require('sinon');
-describe('checking the get email method in mailServices file', function () {
+describe('checking the get email method in mailServices file',  () =>{
     let results = { };
     let stub;
     beforeEach(function () {

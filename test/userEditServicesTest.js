@@ -13,7 +13,7 @@ const sinon = require('sinon');
 /**
  * unit test for updateAll function
  */
-describe('checking the updateAll method in userEditServices file', function () {
+describe('checking the updateAll method in userEditServices file', () =>{
     let results = { };
     let dbResults = {
         rowCount: 1
@@ -57,7 +57,7 @@ describe('checking the updateAll method in userEditServices file', function () {
 /**
  * unit test for checkUsername function
  */
-describe('checking the checkUsername method in userEditServices file', function () {
+describe('checking the checkUsername method in userEditServices file',  ()=> {
     let results = { };
     let stub;
     beforeEach(function () {
@@ -91,7 +91,7 @@ describe('checking the checkUsername method in userEditServices file', function 
 /**
  * unit test for updateName function
  */
-describe('checking the updateName method in userEditServices file', function () {
+describe('checking the updateName method in userEditServices file', ()=> {
     let results = { };
     let stub;
     beforeEach(function () {
@@ -123,7 +123,7 @@ describe('checking the updateName method in userEditServices file', function () 
 /**
  * unit test for updateUname function
  */
-describe('checking the updateUname method in userEditServices file', function () {
+describe('checking the updateUname method in userEditServices file',  ()=> {
     let results = { };
     let stub;
     beforeEach(function () {
@@ -142,6 +142,134 @@ describe('checking the updateUname method in userEditServices file', function ()
     });
     it('should return a response object after updating username',()=> {
         return userEditServices.updateUname(1,'abhi').then((res) => {
+            assert.equal(res.stat, true);
+        }).catch((err) => {
+            assert.equal(err.stat, false);
+        });
+    });
+    afterEach(function (){
+        stub.restore();
+    });
+});
+
+/**
+ * unit test for updateAddress function
+ */
+describe('checking the updateAddress method in userEditServices file',  ()=> {
+    let results = { };
+    let stub;
+    beforeEach(function () {
+        results = {
+            rowCount: 1
+        };
+        stub = sinon.stub(userEditServices, 'dbOperations');
+        stub.resolves(results);
+    });
+    it('should call dbOperations',()=> {
+        return userEditServices.updateAddress(1,'abhi').then(() => {
+            assert(stub.calledOnce);
+        }).catch(() => {
+            assert(stub.calledOnce);
+        });
+    });
+    it('should return a response object after updating address',()=> {
+        return userEditServices.updateAddress(1,'abhi').then((res) => {
+            assert.equal(res.stat, true);
+        }).catch((err) => {
+            assert.equal(err.stat, false);
+        });
+    });
+    afterEach(function (){
+        stub.restore();
+    });
+});
+
+/**
+ * unit test for updateEmail function
+ */
+describe('checking the updateEmail method in userEditServices file',  ()=> {
+    let results = { };
+    let stub;
+    beforeEach(function () {
+        results = {
+            rowCount: 1
+        };
+        stub = sinon.stub(userEditServices, 'dbOperations');
+        stub.resolves(results);
+    });
+    it('should call dbOperations',()=> {
+        return userEditServices.updateEmail(1,'abhi').then(() => {
+            assert(stub.calledOnce);
+        }).catch(() => {
+            assert(stub.calledOnce);
+        });
+    });
+    it('should return a response object after updating email',()=> {
+        return userEditServices.updateEmail(1,'abhi').then((res) => {
+            assert.equal(res.stat, true);
+        }).catch((err) => {
+            assert.equal(err.stat, false);
+        });
+    });
+    afterEach(function (){
+        stub.restore();
+    });
+});
+
+/**
+ * unit test for updatePassword function
+ */
+describe('checking the updatePassword method in userEditServices file',  ()=> {
+    let results = { };
+    let stub;
+    beforeEach(function () {
+        results = {
+            rowCount: 1
+        };
+        stub = sinon.stub(userEditServices, 'dbOperations');
+        stub.resolves(results);
+    });
+    it('should call dbOperations',()=> {
+        return userEditServices.updatePassword(1,'abhi').then(() => {
+            assert(stub.calledOnce);
+        }).catch(() => {
+            assert(stub.calledOnce);
+        });
+    });
+    it('should return a response object after updating password',()=> {
+        return userEditServices.updatePassword(1,'abhi').then((res) => {
+            assert.equal(res.stat, true);
+        }).catch((err) => {
+            assert.equal(err.stat, false);
+        });
+    });
+    afterEach(function (){
+        stub.restore();
+    });
+});
+
+/**
+ * unit test for updatePhone function
+ */
+describe('checking the updatePhone method in userEditServices file',  ()=> {
+    let results = { };
+    let stub;
+    beforeEach(function () {
+        results = {
+            rowCount: 1
+        };
+        stub = sinon.stub(userEditServices, 'dbOperations');
+        stub.resolves(results);
+    });
+    it('should call dbOperations',()=> {
+        return userEditServices.updatePhone(1,'abhi').then(() => {
+            assert(stub.calledOnce);
+        }).catch(() => {
+            assert(stub.calledOnce);
+        });
+    });
+    it('should return a response object after updating phone',()=> {
+        return userEditServices.updatePhone(1,'abhi').then((res) => {
             assert.equal(res.stat, true);
         }).catch((err) => {
             assert.equal(err.stat, false);

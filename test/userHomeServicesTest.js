@@ -13,7 +13,7 @@ const sinon = require('sinon');
 /**
  * unit test for getDetails function
  */
-describe('checking the getDetails method in userHomeServices file', function () {
+describe('checking the getDetails method in userHomeServices file',  ()=> {
     let results = { };
     let stub;
     beforeEach(function () {

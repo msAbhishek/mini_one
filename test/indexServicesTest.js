@@ -13,7 +13,7 @@ const sinon = require('sinon');
 /**
  * unit test for checkUsername function
  */
-describe('checking the checkusername method in indexservices file', function () {
+describe('checking the checkusername method in indexservices file',  ()=> {
     let results = { };
     let stub;
     beforeEach(function () {
@@ -47,7 +47,7 @@ describe('checking the checkusername method in indexservices file', function () 
 /**
  * unit test for login function
  */
-describe('checking the login method in indexservices file', function () {
+describe('checking the login method in indexservices file',  ()=> {
     let results = { };
     let stub;
     let userPassword = 'Abhi@123';
