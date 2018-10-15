@@ -82,3 +82,44 @@ describe('checking the login method in indexservices file',  ()=> {
         stub.restore();
     });
 });
+
+/**
+ * unit test for register function
+ */
+describe('checking the register method in indexservices file',  ()=> {
+    let results = { };
+    let dbResults = {};
+    let stub;
+    beforeEach(function () {
+        dbResults = {
+            rows: [
+                { id: 1 },
+            ]
+        };
+        results = {
+            body: [
+                { id: 1 },
+                { uname: 'abhi' },
+                { name: 'abhi' },
+                { password: 'Abhi@123' },
+                { email: 'abhi' },
+                { phone: 99999999999 },
+                { address: 'abhi' },
+                { usertype: 'user' }
+            ]
+        };
+        stub = sinon.stub(indexServices, 'dbOperations');
+        stub.resolves(dbResults);
+    });
+    it('should return user object ',()=> {
+        return indexServices.register(results).then((res) => {
+            assert.equal(res, true);
+        }).catch((err) => {
+            assert.equal(err, false);
+        });
+    });
+    afterEach(function (){
+        stub.restore();
+    });
+});
+

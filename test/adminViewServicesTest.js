@@ -57,7 +57,7 @@ describe('checking the listSingle method in adminViewServices file', () => {
             ]
         };
         stub = sinon.stub(adminViewServices, 'dbOperations');
-        stub.rejects(results);
+        stub.resolves(results);
     });
     it('should call dbOperations',()=> {
         return adminViewServices.listSingle(1).then(() => {
