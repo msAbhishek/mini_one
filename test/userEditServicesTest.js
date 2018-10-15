@@ -21,16 +21,16 @@ describe('checking the updateAll method in userEditServices file', () =>{
     let stub;
     beforeEach(function () {
         results = {
-            body: [
-                { id: 1 },
-                { uname: 'abhi' },
-                { name: 'abhi' },
-                { password: 'Abhi@123' },
-                { email: 'abhi' },
-                { phone: 99999999999 },
-                { address: 'abhi' },
-                { usertype: 'user' }
-            ]
+            body: {
+                id: 1 ,
+                uname: 'abhi' ,
+                name: 'abhi' ,
+                password: 'Abhi@123' ,
+                email: 'abhi' ,
+                phone: 99999999999 ,
+                address: 'abhi' ,
+                usertype: 'user' 
+            }
         };
         stub = sinon.stub(userEditServices, 'dbOperations');
         stub.resolves(dbResults);
