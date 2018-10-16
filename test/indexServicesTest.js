@@ -90,6 +90,7 @@ describe('checking the register method in indexservices file',  ()=> {
     let results = { };
     let dbResults = {};
     let stub;
+    let tempStub;
     beforeEach(function () {
         dbResults = {
             rows: [
@@ -97,19 +98,21 @@ describe('checking the register method in indexservices file',  ()=> {
             ]
         };
         results = {
-            body: [
-                { id: 1 },
-                { uname: 'abhi' },
-                { name: 'abhi' },
-                { password: 'Abhi@123' },
-                { email: 'abhi' },
-                { phone: 99999999999 },
-                { address: 'abhi' },
-                { usertype: 'user' }
-            ]
+            body: {
+                id: 1 ,
+                uname: 'abhi' ,
+                name: 'abhi' ,
+                password: 'Abhi@123' ,
+                email: 'abhi' ,
+                phone: 99999999999 ,
+                address: 'abhi' ,
+                usertype: 'user' 
+            }
         };
         stub = sinon.stub(indexServices, 'dbOperations');
         stub.resolves(dbResults);
+        tempStub = sinon.stub(indexServices, 'defaultImageQuery');
+        tempStub.resolves(dbResults);
     });
     it('should return user object ',()=> {
         return indexServices.register(results).then((res) => {
