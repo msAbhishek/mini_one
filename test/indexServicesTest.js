@@ -86,12 +86,12 @@ describe('checking the login method in indexservices file',  ()=> {
 /**
  * unit test for register function
  */
-describe('checking the register method in indexservices file',  ()=> {
+describe('checking the register method in indexservices file',  () => {
     let results = { };
     let dbResults = {};
     let stub;
     let tempStub;
-    beforeEach(function () {
+    beforeEach(()=> {
         dbResults = {
             rows: [
                 { id: 1 },
@@ -110,7 +110,7 @@ describe('checking the register method in indexservices file',  ()=> {
             }
         };
         stub = sinon.stub(indexServices, 'dbOperations');
-        stub.resolves(dbResults);
+        stub.resolves(true);
         tempStub = sinon.stub(indexServices, 'defaultImageQuery');
         tempStub.resolves(dbResults);
     });
@@ -121,7 +121,7 @@ describe('checking the register method in indexservices file',  ()=> {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () => {
         stub.restore();
     });
 });

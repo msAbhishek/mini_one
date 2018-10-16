@@ -16,7 +16,7 @@ const sinon = require('sinon');
 describe('checking the listAll method in adminViewServices file', () => {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () =>{
         results = {
             rows: [
                 { count: 1 }
@@ -39,7 +39,7 @@ describe('checking the listAll method in adminViewServices file', () => {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
@@ -50,7 +50,7 @@ describe('checking the listAll method in adminViewServices file', () => {
 describe('checking the listSingle method in adminViewServices file', () => {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             rows: [
                 { count: 1 }
@@ -73,7 +73,7 @@ describe('checking the listSingle method in adminViewServices file', () => {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });

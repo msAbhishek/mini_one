@@ -5,7 +5,7 @@ const sinon = require('sinon');
 describe('checking the get email method in mailServices file',  () =>{
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () =>{
         results = {
             rows: [
                 { email: 'abhishekms@gmail.com' }
@@ -28,7 +28,7 @@ describe('checking the get email method in mailServices file',  () =>{
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });

@@ -16,7 +16,7 @@ const sinon = require('sinon');
 describe('checking the getDetails method in userHomeServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             rows: [
                 { id: 1 },
@@ -46,7 +46,7 @@ describe('checking the getDetails method in userHomeServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });

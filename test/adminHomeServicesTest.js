@@ -16,7 +16,7 @@ const sinon = require('sinon');
 describe('checking the listAll method in adminHomeServices file', () => {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () =>{
         results = {
             rows: [
                 { count: 1 }
@@ -39,7 +39,7 @@ describe('checking the listAll method in adminHomeServices file', () => {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
@@ -50,7 +50,7 @@ describe('checking the listAll method in adminHomeServices file', () => {
 describe('checking the listSingle method in adminHomeServices file', ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () =>{
         results = {
             rows: [
                 { count: 1 }
@@ -73,7 +73,7 @@ describe('checking the listSingle method in adminHomeServices file', ()=> {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach(()=>{
         stub.restore();
     });
 });
@@ -84,7 +84,7 @@ describe('checking the listSingle method in adminHomeServices file', ()=> {
 describe('checking the makeAdmin method in adminHomeServices file', ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( ()=> {
         results = {
             rowCount: 1 
         };
@@ -105,7 +105,7 @@ describe('checking the makeAdmin method in adminHomeServices file', ()=> {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });
@@ -116,7 +116,7 @@ describe('checking the makeAdmin method in adminHomeServices file', ()=> {
 describe('checking the deleteUser method in adminHomeServices file', ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             rowCount: 1 
         };
@@ -137,7 +137,7 @@ describe('checking the deleteUser method in adminHomeServices file', ()=> {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
