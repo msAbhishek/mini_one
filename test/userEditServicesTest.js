@@ -19,7 +19,7 @@ describe('checking the updateAll method in userEditServices file', () =>{
         rowCount: 1
     };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             body: {
                 id: 1 ,
@@ -49,7 +49,7 @@ describe('checking the updateAll method in userEditServices file', () =>{
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
@@ -60,7 +60,7 @@ describe('checking the updateAll method in userEditServices file', () =>{
 describe('checking the checkUsername method in userEditServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             rows: [
                 { count: 1 }
@@ -83,7 +83,7 @@ describe('checking the checkUsername method in userEditServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
@@ -94,7 +94,7 @@ describe('checking the checkUsername method in userEditServices file',  ()=> {
 describe('checking the updateName method in userEditServices file', ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             rowCount: 1
         };
@@ -115,7 +115,7 @@ describe('checking the updateName method in userEditServices file', ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
@@ -126,7 +126,7 @@ describe('checking the updateName method in userEditServices file', ()=> {
 describe('checking the updateUname method in userEditServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () =>{
         results = {
             rowCount: 1
         };
@@ -147,7 +147,7 @@ describe('checking the updateUname method in userEditServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });
@@ -158,7 +158,7 @@ describe('checking the updateUname method in userEditServices file',  ()=> {
 describe('checking the updateAddress method in userEditServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( ()=> {
         results = {
             rowCount: 1
         };
@@ -179,7 +179,7 @@ describe('checking the updateAddress method in userEditServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });
@@ -190,7 +190,7 @@ describe('checking the updateAddress method in userEditServices file',  ()=> {
 describe('checking the updateEmail method in userEditServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( ()=> {
         results = {
             rowCount: 1
         };
@@ -211,7 +211,7 @@ describe('checking the updateEmail method in userEditServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });
@@ -222,7 +222,7 @@ describe('checking the updateEmail method in userEditServices file',  ()=> {
 describe('checking the updatePassword method in userEditServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( ()=> {
         results = {
             rowCount: 1
         };
@@ -243,7 +243,7 @@ describe('checking the updatePassword method in userEditServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });
@@ -254,7 +254,7 @@ describe('checking the updatePassword method in userEditServices file',  ()=> {
 describe('checking the updatePhone method in userEditServices file',  ()=> {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () =>{
         results = {
             rowCount: 1
         };
@@ -275,7 +275,7 @@ describe('checking the updatePhone method in userEditServices file',  ()=> {
             assert.equal(err.stat, false);
         });
     });
-    afterEach(function (){
+    afterEach( ()=>{
         stub.restore();
     });
 });

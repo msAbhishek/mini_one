@@ -16,7 +16,7 @@ const sinon = require('sinon');
 describe('checking the list method in adminSearchServices file', () => {
     let results = { };
     let stub;
-    beforeEach(function () {
+    beforeEach( () => {
         results = {
             rows: [
                 { count: 1 }
@@ -39,7 +39,7 @@ describe('checking the list method in adminSearchServices file', () => {
             assert.equal(err, false);
         });
     });
-    afterEach(function (){
+    afterEach( () =>{
         stub.restore();
     });
 });
