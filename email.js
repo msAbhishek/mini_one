@@ -47,6 +47,6 @@ setInterval(() => {
         }
         console.log('Message sent: %s', info.messageId);
     }); 
-}, 6000);
+}, 1000*60*5);
 
 
