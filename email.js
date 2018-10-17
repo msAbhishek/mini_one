@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 /**
- * scheduling a time interval to send emails at every 6 seconds
+ * scheduling a time interval to send emails at every 5 minutes
  */
 setInterval(() => {
     /**
