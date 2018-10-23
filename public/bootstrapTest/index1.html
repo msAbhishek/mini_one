@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>login screen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <script src="../js/index.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="font-weight-bold">Welcome</h1>
+      <div class="myclass">
+        <form class="form">
+          <input type="text" id="uname" placeholder="Username">
+          <input type="password" id="password" placeholder="Password">
+          <input type="button" class="btn" id="login-button" value="login" style="display:inline-block; width: 124px !important">
+          <input type="button" class="btn" id="signup-button" value="signup" style="display:inline-block; width: 124px !important">
+        </form>
+        <span class="logSpan" style=" visibility: hidden;">invalid user credentials</span>
+      </div>
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="la.jpg" alt="Los Angeles" width="600" height="400">
+          </div>
+          <div class="carousel-item">
+            <img src="chicago.jpg" alt="Chicago" width="600" height="400">
+          </div>
+          <div class="carousel-item">
+            <img src="ny.jpg" alt="New York" width="600" height="400">
+          </div>
+        </div>
+        
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
