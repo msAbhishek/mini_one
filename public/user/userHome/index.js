@@ -20,10 +20,8 @@ $(document).ready(function () {
         },
         function (ob) {
             if(ob.stat){
-                $('h1').html(ob.name);
-                $('#h31').html('username: ' + ob.uname);
-                $('#h32').html('email id: ' + ob.email);
-                $('#h33').html('phone number: ' + ob.phone);
+                $('h2').html(ob.name);
+                $('#h31').html(ob.email);
             }
             else{
                 alert('server error');
@@ -40,7 +38,7 @@ $(document).ready(function () {
         .height(200);
 
     //code for home button  coloring       
-    $('#home').css({
+    $('#homeNav').css({
         'backgroundColor': '#333', 'color': '#ddd', 'opacity': '1'
     });
 
