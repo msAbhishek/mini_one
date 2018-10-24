@@ -11,22 +11,65 @@
 <head>
     <meta charset="UTF-8">
     <title>registration page</title>
-    <link rel="stylesheet" href="css/stylereg.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/stylereg.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="js/indexreg.js"></script>
+    <script src="../js/indexreg.js"></script>
 </head>
-
+<style>
+    .container-fluid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.6));
+  background-color: #FFFA02;
+  animation: rgb 30s infinite alternate;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+@keyframes rgb {
+  10% {
+      background-color: #FF6B02;
+  }
+  20% {
+      background-color: #FF0602;
+  }
+  30% {
+      background-color: #FF0289;
+  }
+  40% {
+      background-color: #BF02FF;
+  }
+  50% {
+      background-color: #022CFF;
+  }
+  60% {
+      background-color: #02BFFF;
+  }
+  70% {
+      background-color: #02FFBB;
+  }
+  80% {
+      background-color: #02FF28;
+  }
+  90% {
+      background-color: #63FF02;
+  }
+  100% {
+      background-color: #C8FF02;
+  }
+}
+</style>
 <body>
-    <div class="wrapper">
+    <div class="container-fluid">
         <form class="link">
-            <input type="button" class="rebtn" id="redirect" value="already a user sign in here">
+                <input type="button" class="rebtn" id="redirect" value="already a user sign in here">
         </form>
-        <div class="container1" style="color:white">
+        <div class="container">
             <h1>Registration form</h1>
             <form class="form">
                 <table>
@@ -35,7 +78,7 @@
                         <td>
                             <input type="text" id="name" placeholder="Name" autocomplete="off">
                         </td>
-                        <td>
+                        <td >
                             <span class="nameSpan" style="color: red; visibility: hidden;">enter a valid name</span>
                         </td>
                     </tr>
