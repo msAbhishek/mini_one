@@ -38,39 +38,30 @@
   10% {
       background-color: #FF6B02;
   }
-
   20% {
       background-color: #FF0602;
   }
-
   30% {
       background-color: #FF0289;
   }
-
   40% {
       background-color: #BF02FF;
   }
-
   50% {
       background-color: #022CFF;
   }
-
   60% {
       background-color: #02BFFF;
   }
-
   70% {
       background-color: #02FFBB;
   }
-
   80% {
       background-color: #02FF28;
   }
-
   90% {
       background-color: #63FF02;
   }
-
   100% {
       background-color: #C8FF02;
   }
@@ -153,46 +144,32 @@ form button:hover {
   10% {
       color: #C8FF02;
   }
-
   20% {
       color: #63FF02;
   }
-
   30% {
       color: #02FF28;
   }
-
   40% {
       color: #02BFFF;
   }
-
   50% {
       color: #02FFBB;
   }
-
   60% {
 
       color: #BF02FF;
   }
-
   70% {
-
       color: #022CFF;
   }
-
   80% {
-
       color: #FF0289;
   }
-
   90% {
-
       color: #FF0602;
-
   }
-
   100% {
-
       color: #FF6B02;
   }
 }

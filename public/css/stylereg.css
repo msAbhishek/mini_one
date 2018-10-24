@@ -1,108 +1,144 @@
 /**
  * @author [Abhishek m s]
  * @email [abhishekmsams54@gmail.com]
- * @create date 2018-09-13 12:32:42
- * @modify date 2018-09-13 12:32:42
+ * @create date 2018-10-24 13:36:06
+ * @modify date 2018-10-24 13:36:06
  * @desc [description]
 */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+:root {
+  --shadow: 0 1px 5px rgba(71, 66, 66, 0.8);
+  --shadow2: 0 1px 5px rgba(255, 255, 255, 0.4);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; height: 100%; overflow: hidden
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-weight: 300;
 }
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: white;
-  font-weight: 300;
-}
-.wrapper {
-  background: #50a3a2;
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.wrapper.form-success .container h1 {
-  -webkit-transform: translateY(85px);
-          transform: translateY(85px);
-}
-.container {
-
-  /* max-width: 600px; */
-  margin: 10px auto 50%;
-  padding: 100px 0;
-  height: 400px;
-  text-align: center;
-}
-.container h1 {
-  font-size: 40px;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-put;
-  font-weight: 200;
+  top: 0;
+  bottom: 0;
 }
 form {
   padding: 20px 0;
   position: relative;
   z-index: 2;
 }
-form table {
-  margin-left: 480px;
+form td {
+  text-align: center;
+  padding: 1px 10px;
 }
-form table .lft {
-  text-align: left !important;
+.input-container {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-form input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: 0;
+.icon {
+  box-shadow: var(--shadow);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  background-color: white;
+  color: #53e3d7;
+  min-width: 50px;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  appearance: none;
+  box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
   width: 250px;
   border-radius: 3px;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  display: block;
   text-align: center;
-  font-size: 18px;
-  color:red;
+  color: #53e3d7;
   transition-duration: 0.25s;
-  font-weight: 300;
 }
-form td {
-  text-align: center;
-  padding: 1px 20px;
-}
-form input:hover {
+
+.input-field:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-form input:focus {
-  background-color: white;
-  width: 300px;
+
+.input-field:focus {
+  background: white;
 }
+
 .btn {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: 0;
+  box-shadow: var(--shadow);
   background-color: white;
-  border: 0;
-  padding: 10px 15px;
-  color: #53e3a6;
-  border-radius: 3px;
-  width: 124px !important;
+  color: #53e3d7;
+  padding: 15px 20px;
+  border: none;
   cursor: pointer;
-  font-size: 18px;
-  transition-duration: 0.25s;
+  width: 100%;
+  opacity: 0.9;
 }
- .btn:hover {
-  background-color: #f5f7f9;
-} 
+
+.btn:hover {
+  opacity: 1;
+}
+.lft {
+  text-align: left;
+}
+
+.jumbotron {
+  background: none;
+  width: 1000px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow);
+  display: block;
+  padding-top: 20px !important;
+}
+.jumbotron h1 {
+   margin-left: 250px;
+}
+
+table {
+  margin-left: 200px;
+  border-spacing: 10px !important;
+}
+
+.rebtn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.rebtn {
+  color: white;
+  font-size: 15px;
+  width: auto !important;
+  cursor: pointer;
+  border: none !important;
+  background-color: inherit;
+  text-decoration-line: underline;
+  float: right;
+}
+.rebtn:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
 .bg-bubbles {
   position: absolute;
   top: 0;
@@ -117,7 +153,7 @@ form input:focus {
   display: block;
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color:  rgba(255, 255, 255, 0.15); 
   bottom: -160px;
   -webkit-animation: square 25s infinite;
   animation: square 10s infinite;
@@ -211,25 +247,4 @@ form input:focus {
     -webkit-transform: translateY(-700px) rotate(600deg);
             transform: translateY(-700px) rotate(600deg);
   }
-}
-.link {
-  margin-top: 10px;
-  margin-right: 20px;
-  float: right;
-  cursor: pointer !important;
-}
-.rebtn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-.rebtn {
-  color: white;
-  font-size: 15px;
-  width: auto !important;
-  cursor: pointer;
-  border: none !important;
-  background-color: inherit;
-  text-decoration-line: underline;
-}
-.rebtn:focus {
-  background-color: rgba(255, 255, 255, 0.2);
 }

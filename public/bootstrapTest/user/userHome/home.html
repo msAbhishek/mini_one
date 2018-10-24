@@ -1,0 +1,61 @@
+<!--
+@author [Abhishek m s]
+@email [abhishekmsams54@gmail.com]
+@create date 2018-09-13 12:31:43
+@modify date 2018-09-13 12:31:43
+@desc [description]
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home screen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a id="home" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a id="about" href="../userEdit/edit.html">Edit</a>
+                    </li>
+                    <li>
+                        <a href="#">empty</a>
+                    </li>
+                    <li>
+                        <a href="#">empty</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="bgm">
+            <input type="button" class="btn1" id="logout_btn" value="Log out">
+        <div class="card">
+            <div class="images">
+                <img id="userImage" style="height: 200px;width: 200px; display: block; position: relative;">
+                <input type="button" id="btnSubmit" class="butn" value="upload" />
+                <input type="file" id="imgupload" name="imgUploader" style="display:none" />
+            </div>
+            <div class="details">
+                <h1></h1>
+                <h3 id="h31"></h3>
+                <h3 id="h32"></h3>
+                <h3 id="h33"></h3>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

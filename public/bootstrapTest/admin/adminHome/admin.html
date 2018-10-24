@@ -1,0 +1,65 @@
+<!--
+@author [Abhishek m s]
+@email [abhishekmsams54@gmail.com]
+@create date 2018-09-13 12:33:42
+@modify date 2018-09-13 12:33:42
+@desc [description]
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home screen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a id="home" href="#">edit users</a>
+                    </li>
+                    <li>
+                        <a id="adminview" href="#">view admins</a>
+                    </li>
+                    <li>
+                        <a id="search" href="#">search all</a>
+                    </li>
+                    <li>
+                        <a href="#">empty</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="user">
+            <table class="ui very basic collapsing celled table" id="tbl">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Employee Id</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="demo">
+                </tbody>
+            </table>
+
+        </div>
+        <div class="useredit">
+            <input type="button" class="btn1" id="logout_btn" value="Log out">
+            <div id="card">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
