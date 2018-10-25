@@ -22,7 +22,7 @@ $(document).ready(function () {
     let phoneFlage = false;
 
 
-    $('#edit').css({
+    $('#editNav').css({
         'backgroundColor': '#333', 'color': '#ddd', 'opacity': '1'
     });
     $.post('/userhome/getdetails',  //server request for user details retrival
@@ -44,12 +44,12 @@ $(document).ready(function () {
     $('#name').keyup(function () {
         let regx = /^[a-z ,.'-]+$/i;
         let name = document.getElementById('name').value;
-        if ((name != '') && (name.length >=3) && (regx.test(name))) {
+        if ((name != '') && (name.length >= 3) && (regx.test(name))) {
             nameFlag = true;
             $('#name').css('color', 'green');
             $('.nameSpan').css('visibility', 'hidden');
             $('#namebtn').css('visibility', 'visible');
-            if (nameFlag && unameFlag && addressFlag && emailFlag && passwordFlag && phoneFlage && cpasswordFlag ) {
+            if (nameFlag && unameFlag && addressFlag && emailFlag && passwordFlag && phoneFlage && cpasswordFlag) {
                 $('.btnSpan').css('visibility', 'hidden');
             }
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
     $('#uname').keyup(function () {
 
         let userName = document.getElementById('uname').value;
-        if ((userName != '') && (userName.length >=3)) {
+        if ((userName != '') && (userName.length >= 3)) {
             $.post('/useredit/checkusername', //server request for username existance check
                 {
                     uname: userName
@@ -199,7 +199,7 @@ $(document).ready(function () {
     $('#cpassword').keyup(function () {
         let cpassword = document.getElementById('cpassword').value;
         let password = document.getElementById('password').value;
-        if ( ( password == cpassword ) &&  passwordFlag) {
+        if ((password == cpassword) && passwordFlag) {
             cpasswordFlag = true;
             $('#cpassword').css('color', 'green');
             $('.cpasswordSpan').css('visibility', 'hidden');
@@ -244,7 +244,7 @@ $(document).ready(function () {
                         window.location.href = './edit.html' + queryString;
                         return false;
                     }
-                    else{
+                    else {
                         alert('updation failed');
                         let queryString = '?para1=' + uid;
                         window.location.href = './edit.html' + queryString;
@@ -273,7 +273,7 @@ $(document).ready(function () {
                     window.location.href = './edit.html' + queryString;
                     return false;
                 }
-                else{
+                else {
                     alert('updation failed');
                     let queryString = '?para1=' + uid;
                     window.location.href = './edit.html' + queryString;
@@ -297,7 +297,7 @@ $(document).ready(function () {
                     window.location.href = './edit.html' + queryString;
                     return false;
                 }
-                else{
+                else {
                     alert('updation failed');
                     let queryString = '?para1=' + uid;
                     window.location.href = './edit.html' + queryString;
@@ -321,7 +321,7 @@ $(document).ready(function () {
                     window.location.href = './edit.html' + queryString;
                     return false;
                 }
-                else{
+                else {
                     alert('updation failed');
                     let queryString = '?para1=' + uid;
                     window.location.href = './edit.html' + queryString;
@@ -345,7 +345,7 @@ $(document).ready(function () {
                     window.location.href = './edit.html' + queryString;
                     return false;
                 }
-                else{
+                else {
                     alert('updation failed');
                     let queryString = '?para1=' + uid;
                     window.location.href = './edit.html' + queryString;
@@ -369,7 +369,7 @@ $(document).ready(function () {
                     window.location.href = './edit.html' + queryString;
                     return false;
                 }
-                else{
+                else {
                     alert('updation failed');
                     let queryString = '?para1=' + uid;
                     window.location.href = './edit.html' + queryString;
@@ -393,7 +393,7 @@ $(document).ready(function () {
                     window.location.href = './edit.html' + queryString;
                     return false;
                 }
-                else{
+                else {
                     alert('updation failed');
                     let queryString = '?para1=' + uid;
                     window.location.href = './edit.html' + queryString;

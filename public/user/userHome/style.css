@@ -28,7 +28,7 @@ body {
 .col-sm-3 {
   appearance: none;
   border-radius: 3px;
-  background: var(--primary);
+  background: rgb(14, 173, 120);
   display: block;
   text-decoration: none;
   padding: 20px;
@@ -37,7 +37,7 @@ body {
   font-size:20px;
   box-shadow: var(--shadow);
   font-weight: bold;
-  opacity: 0.5;
+  opacity: 1;
 }
 .col-sm-3 a {
   color:white;
@@ -50,21 +50,25 @@ body {
 .jumbotron {
   margin-left: 20px;
   margin-right: 20px;
+  height: 620px;;
   background: url(../../testimg/bg3.png);
   background-size: 100% 100%;
   max-width: 100%;
   box-shadow: var(--shadow);
   padding-top: 20px;
+  
 }
 
 .jumbotron img {
   margin: 10px;
+  margin-bottom: 0px;
   border: 2px solid var(--dark);
   border-radius: 3px;
 }
 
 .card-body {
   margin-left: 10px;
+  
 }
 
 .butn {

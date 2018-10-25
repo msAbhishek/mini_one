@@ -9,7 +9,7 @@ $(document).ready(function () {
     let queryString = decodeURIComponent(window.location.search);
     queryString = queryString.substring(1);
     let queries = queryString.split('=');
-    let uid=queries[1];
+    let uid = queries[1];
     // var imgString;
     // var uid = localStorage.getItem('uid');
 
@@ -19,11 +19,11 @@ $(document).ready(function () {
             id: uid
         },
         function (ob) {
-            if(ob.stat){
+            if (ob.stat) {
                 $('h2').html(ob.name);
                 $('#h31').html(ob.email);
             }
-            else{
+            else {
                 alert('server error');
                 window.location.href = '../../index.html';
                 return false;
@@ -69,7 +69,7 @@ $(document).ready(function () {
     //code for edit page redirect 
     $('#about').click(function () {
         let queryString = '?para1=' + uid;
-        window.location.href = '../userEdit/edit.html'+queryString;
+        window.location.href = '../userEdit/edit.html' + queryString;
         return false;
     });
 
