@@ -1,64 +1,56 @@
 <!--
 @author [Abhishek m s]
 @email [abhishekmsams54@gmail.com]
-@create date 2018-09-13 12:33:27
-@modify date 2018-09-13 12:33:27
+@create date 2018-10-24 10:21:37
+@modify date 2018-10-24 10:21:37
 @desc [description]
--->
-<!--
-@author [Abhishek m s]
-@email [abhishekmsams54@gmail.com]
-@create date 2018-09-12 17:51:30
-@modify date 2018-09-12 17:51:30
-@desc [search page for admin]
 -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>home screen</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Admin Search Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <nav class="main-nav">
-                <ul>
-                    <li>
-                        <a id="home" href="#">edit users</a>
-                    </li>
-                    <li>
-                        <a id="adminview" href="#">view admins</a>
-                    </li>
-                    <li>
-                        <a id="search" href="#">search all</a>
-                    </li>
-                    <li>
-                        <a href="#">empty</a>
-                    </li>
-                </ul>
-            </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <a id="home" style="text-decoration: none;" href="#">EDIT USERS</a>
+            </div>
+            <div class="col-sm-3" id="adminviewnav">
+                <a id="adminview" style="text-decoration: none;" href="#">VIEW ADMINS</a>
+            </div>
+            <div class="col-sm-3" id="adminsearchnav">
+                <a id="search" style="text-decoration: none;" href="#">SEARCH</a>
+            </div>
+            <div class="col-sm-3">
+                <a id="" style="text-decoration: none;" href="#">EMPTY</a>
+            </div>
         </div>
-
-        <div class="ui left icon input" id="cls">
-            <input type="text" placeholder="Search username" id="search_bar">
-            <i class="users icon"></i>
-        </div>
-        
-        <div id="demo">
-
-        </div>
-        <div class="useredit">
+        <div class="jumbotron">
             <input type="button" class="btn1" id="logout_btn" value="Log out">
-            <div id="card">
+            <div class="ui left icon input" id="cls">
+                <input type="text" placeholder="Search username" id="search_bar">
+                <i class="users icon"></i>
+            </div>
+            <div id="demo">
 
             </div>
+            <div class="useredit">
+                <div id="card">
+
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

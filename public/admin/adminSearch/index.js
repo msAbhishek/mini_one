@@ -15,7 +15,7 @@ $(document).ready(function () {
     let uid = queries[1];
 
     //code for home button  coloring       
-    $('#search').css({
+    $('#adminsearchnav').css({
         'backgroundColor': '#333', 'color': '#ddd', 'opacity': '1'
     });
 
@@ -85,7 +85,7 @@ $(document).ready(function () {
                                 style="height: 200px;width: 200px; display: block; position: relative;">
                                 </div>
                                 <div class="details1" id="mydetails">
-                                <h1>Name: `+ ob.user.name + `</h1>
+                                <h2>Name: `+ ob.user.name + `</h1>
                                 <h3 id="h31">UserName: `+ ob.user.uname + `</h3>
                                 <h3 id="h32">Email: `+ ob.user.email + `</h3>
                                 <h3 id="h33">Address: `+ ob.user.address + `</h3>
@@ -99,4 +99,8 @@ $(document).ready(function () {
             });
 
     });
+    // code for hiding slected user details on focus out
+    $(document).on( 'click', '.jumbotron', function(){
+        $(this).find('.card1').hide();
+    } );
 });
